@@ -1,0 +1,1 @@
+small helper program to migrate data from sqlite db to influx db
