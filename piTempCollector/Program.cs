@@ -6,17 +6,18 @@ var influxDBClient = InfluxDBClientFactory.Create("http://bors.local:8086");
 var i = 0;
 while (true)
 {
-    if (i % 100 == 0)
+    if (i % 20 == 0)
     {
+        //some logging everynow and then allows some feedback
+        System.Console.WriteLine($"{DateTime.UtcNow}: added info to Influx");
         System.Console.WriteLine("getting temps!");
     }
     var basePathSensors = "/sys/bus/w1/devices/";
     var sensors = new Dictionary<string, string>{
-
-    {"bottom", "28-021581a9cdff"},
-    {"top","28-021581d6f1ff"},
-    {"in","28-0215819713ff"},
-    {"out","28-0115818cf0ff"}
+        {"bottom", "28-021581a9cdff"},
+        {"top","28-021581d6f1ff"},
+        {"in","28-0215819713ff"},
+        {"out","28-0115818cf0ff"}
     };
 
     using (var writeApi = influxDBClient.GetWriteApi())
@@ -25,7 +26,7 @@ while (true)
         {
             Time = DateTime.UtcNow
         };
-        
+
         foreach (var key in sensors.Keys)
         {
             var temp = GetTemp(Path.Join(basePathSensors, sensors[key], "temperature"));
@@ -49,8 +50,7 @@ while (true)
             }
         }
         writeApi.WriteMeasurement("pithermserver", "org_id", WritePrecision.Ms, tempMeasurement);
-        System.Console.WriteLine("added info to Influx");
-        // System.Console.WriteLine(temp);
+        
         influxDBClient.Dispose();
     }
     i++;
