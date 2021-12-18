@@ -24,7 +24,8 @@ while (true)
         var tempMeasurement = new Temperature
         {
             Time = DateTime.UtcNow
-        }
+        };
+        
         foreach (var key in sensors.Keys)
         {
             var temp = GetTemp(Path.Join(basePathSensors, sensors[key], "temperature"));
