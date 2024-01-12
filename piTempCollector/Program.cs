@@ -2,7 +2,7 @@
 using InfluxDB.Client.Api.Domain;
 using InfluxDB.Client.Core;
 
-var influxDBClient = InfluxDBClientFactory.Create("http://bors.local:8086");
+var influxDBClient = InfluxDBClientFactory.Create("http://localhost:8086");
 var i = 0;
 while (true)
 {
@@ -50,11 +50,10 @@ while (true)
             }
         }
         writeApi.WriteMeasurement("pithermserver", "org_id", WritePrecision.Ms, tempMeasurement);
-        
         influxDBClient.Dispose();
     }
     i++;
-    await Task.Delay(TimeSpan.FromMinutes(5));
+    await Task.Delay(TimeSpan.FromMinutes(1));
 }
 
 double GetTemp(string sensorPath)
