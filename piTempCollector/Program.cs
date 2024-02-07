@@ -56,10 +56,19 @@ while (true)
     await Task.Delay(TimeSpan.FromMinutes(1));
 }
 
-double GetTemp(string sensorPath)
+double GetTemp(string sensorPath, int tries = 0)
 {
     var sensorV = System.IO.File.ReadAllText(sensorPath);
-    return double.Parse(sensorV) / 1000;
+    if (double.TryParse(sensorV, out double measurement))
+    {
+        return measurement / 1000;
+    }
+    else if (tries < 5)
+    {
+        Console.WriteLine($"Retrying to get a measuerment from {sensorPath}");
+        return GetTemp(sensorPath, tries++);
+    }
+    return double.NaN;
 }
 
 [Measurement("temperature")]

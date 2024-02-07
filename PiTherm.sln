@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "piThermConverter", "piThermConverter\piThermConverter.csproj", "{31CE5E9C-4D4E-4A9C-B5A5-DA3629CB700B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "piTempCollector", "piTempCollector\piTempCollector.csproj", "{3DEC171E-A523-406C-93B9-AC29B3F6911D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31CE5E9C-4D4E-4A9C-B5A5-DA3629CB700B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CE5E9C-4D4E-4A9C-B5A5-DA3629CB700B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CE5E9C-4D4E-4A9C-B5A5-DA3629CB700B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CE5E9C-4D4E-4A9C-B5A5-DA3629CB700B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEC171E-A523-406C-93B9-AC29B3F6911D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEC171E-A523-406C-93B9-AC29B3F6911D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEC171E-A523-406C-93B9-AC29B3F6911D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEC171E-A523-406C-93B9-AC29B3F6911D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7B5872E-99D9-4B47-8F83-3C04A87C4792}
+	EndGlobalSection
+EndGlobal
